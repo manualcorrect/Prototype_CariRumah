@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#4b4263", "inverse-primary": "#cfbcff", "secondary-fixed": "#e9ddff", "on-surface": "#1d1b20", "secondary": "#63597c", "surface-dim": "#ded8e0", "tertiary-container": "#c9a74d", "inverse-on-surface": "#f5eff7", "on-primary-fixed-variant": "#4f378a", "on-primary-container": "#e0d2ff", "surface-tint": "#6750a4", "tertiary-fixed-dim": "#e7c365", "tertiary": "#765b00", "on-tertiary": "#ffffff", "on-secondary-container": "#645a7d", "on-error-container": "#93000a", "on-tertiary-fixed": "#241a00", "surface-container-low": "#f8f2fa", "on-secondary-fixed": "#1f1635", "on-primary": "#ffffff", "on-tertiary-container": "#503d00", "surface-container-high": "#ece6ee", "error": "#ba1a1a", "outline-variant": "#cbc4d2", "surface-container-highest": "#e6e0e9", "on-primary-fixed": "#22005d", "tertiary-fixed": "#ffdf93", "outline": "#7a7582", "on-error": "#ffffff", "error-container": "#ffdad6", "primary": "#4f378a", "on-secondary": "#ffffff", "on-background": "#1d1b20", "on-tertiary-fixed-variant": "#594400", "inverse-surface": "#322f35", "surface": "#fdf7ff", "surface-variant": "#e6e0e9", "on-surface-variant": "#494551", "secondary-fixed-dim": "#cdc0e9", "secondary-container": "#e1d4fd", "background": "#fdf7ff", "surface-container-lowest": "#ffffff", "primary-fixed": "#e9ddff", "primary-fixed-dim": "#cfbcff", "surface-bright": "#fdf7ff", "primary-container": "#6750a4", "surface-container": "#f2ecf4" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-md": "1rem", "space-xs": "0.25rem", "space-xl": "2.5rem", "gutter": "1.5rem", "space-lg": "1.5rem", "space-sm": "0.5rem", "margin": "2rem", "margin-sm": "1rem", "gutter-sm": "1rem" }, "fontFamily": { "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "currency-stat": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "currency-stat": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 overflow-y-auto px-4 py-4"><div class="flex items-center gap-3 px-2 mb-6"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-2xl">domain</span></div><div class="flex flex-col"><div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-primary font-bold tracking-tight">CariRumah</span><span class="font-label-sm text-label-sm text-tertiary font-bold bg-tertiary-fixed px-1.5 py-0.5 rounded">BANTEN</span></div><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Developer & Admin Hub</span></div></div><div class="px-2 py-2 mb-4 rounded-xl bg-surface-container-high flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant font-semibold uppercase tracking-wider">Koneksi Sistem</span><span class="flex items-center gap-1 text-[10px] font-bold text-tertiary bg-tertiary-fixed px-1.5 py-0.25 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>LIVE</span></div><span class="font-label-sm text-label-sm text-on-surface font-medium truncate">Banten Server (BTN & BSI API)</span></div><nav class="flex flex-col gap-5" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><div class="flex flex-col gap-1"><div class="px-2 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Utama</div><a aria-current="page" class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="dashboard-overview" href="#"><span class="material-symbols-outlined text-xl">dashboard</span><span class="font-label-lg text-label-lg">Dashboard Overview</span></a></div><div class="flex flex-col gap-1"><div class="px-2 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Manajemen Developer</div><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="proyek-cluster-subsidi" href="#"><span class="material-symbols-outlined text-xl">location_city</span><span class="font-label-lg text-label-lg">Proyek & Cluster Subsidi</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="siteplan-kaveling-interaktif" href="#"><span class="material-symbols-outlined text-xl">grid_view</span><span class="font-label-lg text-label-lg">Siteplan & Kaveling</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pengajuan-kpr-flpp-notaris" href="#"><span class="material-symbols-outlined text-xl">assignment_turned_in</span><span class="font-label-lg text-label-lg">KPR FLPP & Notaris</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="integrasi-api-bank-webhook" href="#"><span class="material-symbols-outlined text-xl">webhook</span><span class="font-label-lg text-label-lg">Integrasi API Bank</span></a></div><div class="flex flex-col gap-1"><div class="px-2 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Listing & User</div><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="semua-listing-subsidi" href="#"><span class="material-symbols-outlined text-xl">home_work</span><span class="font-label-lg text-label-lg">Semua Listing Subsidi</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="listing-takeover-member" href="#"><span class="material-symbols-outlined text-xl">swap_horiz</span><span class="font-label-lg text-label-lg">Listing Takeover</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="data-member-debitur" href="#"><span class="material-symbols-outlined text-xl">group</span><span class="font-label-lg text-label-lg">Data Member & Debitur</span></a></div><div class="flex flex-col gap-1"><div class="px-2 font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Pengaturan</div><a class="flex items-center justify-between px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pengaturan-sistem" href="#"><div class="flex items-center gap-3"><span class="material-symbols-outlined text-xl">tune</span><span class="font-label-lg text-label-lg">Pengaturan Sistem</span></div><span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold">Admin</span></a><a class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="log-aktivitas-keamanan" href="#"><span class="material-symbols-outlined text-xl">shield</span><span class="font-label-lg text-label-lg">Log & Keamanan</span></a></div></nav></div><div class="p-4 flex flex-col gap-3 bg-surface-container-low"><div class="p-3 rounded-xl bg-surface-container flex flex-col gap-1.5 shadow-[0_1px_4px_rgba(0,0,0,0.03)]"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm font-bold text-on-surface">Bank Gateway</span><span class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-tertiary bg-tertiary-fixed px-2 py-0.5 rounded-full"><span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Aktif</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">BTN FLPP Direct & BSI Hasanah Ready</p></div><button class="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-xl text-error bg-error-container hover:bg-error hover:text-on-error transition-colors font-label-md text-label-md font-semibold" type="button"><span class="material-symbols-outlined text-base">logout</span><span>Keluar Portal</span></button></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-8"><div class="flex items-center gap-4 flex-1 max-w-xl"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span><input class="w-full pl-10 pr-4 py-2 text-body-sm font-body-sm rounded-xl bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:ring-2 focus:ring-primary shadow-sm" placeholder="Cari cluster, kavling, nama notaris, No. Debitur..." type="text"/></div></div><div class="flex items-center gap-4 ml-6"><div class="hidden xl:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high"><span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Serang Core: <strong class="text-on-surface">API Live (24ms)</strong></span></div><button class="relative p-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors" type="button"><span class="material-symbols-outlined text-2xl">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 bg-error rounded-full ring-2 ring-surface"></span></button><div class="flex items-center gap-3 pl-2"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-lg text-label-lg font-bold text-on-surface leading-tight">Hendrawan, S.T.</span><div class="flex items-center gap-1.5 justify-end"><span class="font-label-sm text-label-sm text-on-surface-variant">PT Serang Cipta Graha</span><span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-1.5 py-0.2 rounded font-bold">Super Admin & Dev</span></div></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1UjVdOjCwASn-IN7nAxaGSWWVDVfQnHZXmHz_FUgflC59vsogKwLRzQIOb5RhWt2sdp_DzMHdMTv6O4Imag0cMYHcc7rBFYUOt5kB8hrJ2QxnIyNRxT4Ip5jQUjg8hPEMBIX9cXpTK9b3prK7wIwmyurW3D_5fTZkZZX63aoogUFjbaLhH5FE6afi31ARYl2omo8mAGrmnGJn11q98d-tn3IsRYBwmtNYVwWYh68RNiBZ-m94iPEi2B0ikG"/></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<div class="p-6 lg:p-8 flex flex-col gap-8 max-w-[1600px] mx-auto w-full">
+<!-- Top Greeting & Developer Quick Actions -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 lg:p-8 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-6 relative overflow-hidden">
+<div class="flex flex-col gap-2 max-w-3xl z-10">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Portal Resmi Konsorsium Banten</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold">
+          Panel Kontrol Developer & Super Admin
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Kelola rilis cluster subsidi FLPP, kaveling unit, validasi berkas notaris KPR, serta moderasi semua listing takeover member se-Banten secara realtime.
+        </p>
+</div>
+<div class="flex flex-wrap items-center gap-3 z-10">
+<button class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg font-semibold hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>+ Tambah Cluster / Proyek Baru</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg font-medium hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-lg text-primary">sync</span>
+<span>Sinkronisasi Kuota FLPP Bank</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.5 rounded font-bold">BTN & BSI</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-3 rounded-xl bg-surface-container-high text-on-surface font-label-lg text-label-lg font-medium hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-lg text-primary">assignment</span>
+<span>Verifikasi Berkas Masuk</span>
+<span class="font-label-sm text-label-sm bg-error text-on-error px-2 py-0.5 rounded-full font-bold">7 Antrean</span>
+</button>
+</div>
+<!-- Decorative ambient gradient -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-secondary-fixed opacity-40 blur-3xl pointer-events-none"></div>
+</div>
+<!-- Developer KPI Metrics -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold uppercase tracking-wider">Total Unit Dikelola</span>
+<span class="p-2 rounded-xl bg-primary-fixed text-on-primary-fixed">
+<span class="material-symbols-outlined text-xl">holiday_village</span>
+</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface font-extrabold">348</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Unit Portofolio</span>
+</div>
+<div class="flex items-center gap-1.5 text-tertiary font-bold">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span class="font-label-sm text-label-sm">+18% MoM Serapan</span>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between gap-2 bg-surface-container-low p-3 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Akad</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">182</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Booking</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">94</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ready</span>
+<span class="font-label-md text-label-md font-bold text-tertiary">72</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold uppercase tracking-wider">Pengajuan KPR & FLPP</span>
+<span class="p-2 rounded-xl bg-secondary-fixed text-on-secondary-fixed">
+<span class="material-symbols-outlined text-xl">pending_actions</span>
+</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface font-extrabold">28</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Berkas Aktif</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SLA Bank BTN & BSI Rata-rata 4.2 Hari</span>
+</div>
+<div class="pt-3 flex items-center justify-between gap-2 bg-surface-container-low p-3 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Lolos SLIK</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">15</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notaris</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">8</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">SP3K</span>
+<span class="font-label-md text-label-md font-bold text-primary">5</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold uppercase tracking-wider">Listing Takeover Member</span>
+<span class="p-2 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-xl">swap_horizontal_circle</span>
+</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-2">
+<span class="font-display-lg-mobile text-display-lg-mobile text-on-surface font-extrabold">46</span>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">Unit Warga</span>
+</div>
+<div class="flex items-center gap-1.5 text-error font-bold">
+<span class="material-symbols-outlined text-base">gavel</span>
+<span class="font-label-sm text-label-sm">12 Perlu Verifikasi Sertifikat</span>
+</div>
+</div>
+<div class="pt-3 flex items-center justify-between gap-2 bg-surface-container-low p-3 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kab. Serang</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">22</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kota Serang</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">16</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Cilegon</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">8</span>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant font-semibold uppercase tracking-wider">Omset Penyaluran & Nilai</span>
+<span class="p-2 rounded-xl bg-secondary-container text-on-secondary-container">
+<span class="material-symbols-outlined text-xl">payments</span>
+</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex items-baseline gap-1">
+<span class="font-currency-stat text-currency-stat text-on-surface font-extrabold">Rp 57,8</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">Miliar</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Akumulasi Subsidi & Takeover 2026</span>
+</div>
+<div class="pt-3 flex items-center justify-between gap-2 bg-surface-container-low p-3 rounded-xl">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Escrow Notaris</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Rp 3,4 M</span>
+</div>
+<div class="w-px h-6 bg-surface-container-highest"></div>
+<div class="flex flex-col text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pencairan BTN</span>
+<span class="font-label-md text-label-md font-bold text-tertiary">96.4%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Housing Projects & Full Moderation Table (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-8 min-w-0">
+<!-- Section 1: Ringkasan Proyek Cluster Subsidi & Kaveling Siap Rilis -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="p-2 rounded-xl bg-primary text-on-primary">
+<span class="material-symbols-outlined text-xl">apartment</span>
+</span>
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Cluster Subsidi & Kaveling Siap Rilis</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monitoring kuota FLPP, progres fisik konstruksi, dan masterplan Banten</p>
+</div>
+</div>
+<a class="font-label-md text-label-md text-primary font-bold hover:underline flex items-center gap-1" href="#">
+<span>Lihat Semua Proyek (8)</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<!-- Project 1 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-36 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A clean modern Indonesian affordable housing development cluster streetscape in Serang Banten with neat single-story houses, paved roads, and clear morning sunlight with tropical greenery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUDfu4ElhBG3qFT4mwSoLzPfFdh0Hsg4gSA3ZOvX8kcDRRz1ojCTarHsPjHzRMNB6-cC7350-IMRdKbmPqaPyeJLgSgZpo9KqeMKGsQscCzz8ClhHekJtpExLMMv930Q5GQslw-fsSxFZ7rRWM3TqjBy7EXw3ueBYAXmAuLsl-2BHPfdUHbYbcfs7l_wWJh5JN0CEsT14QisZy70cfNTwYf_R7F9oFwF70kmQ67uf_lgwnSK_ddgPKpA"/>
+<span class="absolute top-2.5 left-2.5 font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full font-bold shadow-sm">
+                    Open NUP
+                  </span>
+<span class="absolute bottom-2.5 right-2.5 font-label-sm text-label-sm bg-surface-container-lowest/90 backdrop-blur text-on-surface px-2 py-0.5 rounded font-semibold">
+                    Kab. Serang
+                  </span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold line-clamp-1">Grand Pesona Kramatwatu 2</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Kramatwatu, Kab. Serang (Akses Tol Serang Barat)</span>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Progress Fisik Lapangan</span>
+<span class="font-bold text-on-surface">85%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>Kapasitas: <strong>120 Unit</strong></span>
+<span class="text-error font-bold">Sisa Kuota: 14 Unit</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-3">
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors text-center" type="button">
+                    Kelola Siteplan
+                  </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors text-center" type="button">
+                    Upload RAB
+                  </button>
+</div>
+<button class="w-full px-3 py-2 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Edit Cluster & Harga</span>
+</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-36 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Neat residential facade of Indonesian subsidized government housing complex with pastel walls and red tile roof in Kota Serang with clear blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCt4Okli-6v5Bd0ae3ua1l_JWLPVVF2e-L6HygV-bhXvb8DTLWbJBsOJXNYuMgvXC1mOOfLhCz1WTnH33S9jehvxgvw6wB3ReAtUNXnw2GiGg7niJK_mVggua8QY3uy8KzU1llJhUGg9n7ZVRsU-lQAruzPNHuLRU8o-lBC6F7kJmtujflnJEoXsQm42uQlQ_qvnxXKuJKPwS7n_6Y34z9mqyXljiZK2nDbd4Rrcd18-nxw-wh5FbfwfQ"/>
+<span class="absolute top-2.5 left-2.5 font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2.5 py-1 rounded-full font-bold shadow-sm">
+                    100% Siap Huni
+                  </span>
+<span class="absolute bottom-2.5 right-2.5 font-label-sm text-label-sm bg-surface-container-lowest/90 backdrop-blur text-on-surface px-2 py-0.5 rounded font-semibold">
+                    Kota Serang
+                  </span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold line-clamp-1">Puri Angsana Serang Timur</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cluster Bougenville, Kalodran, Kota Serang</span>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Penyerapan FLPP BTN</span>
+<span class="font-bold text-on-surface">86%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 86%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>Total: <strong>95 Unit</strong></span>
+<span class="text-tertiary font-bold">Terserap: 82 Unit</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-3">
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors text-center" type="button">
+                    Kelola Siteplan
+                  </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors text-center" type="button">
+                    Cek IMB/PBG
+                  </button>
+</div>
+<button class="w-full px-3 py-2 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Edit Cluster & Harga</span>
+</button>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-3">
+<div class="relative w-full h-36 rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Architectural masterplan perspective rendering of a new residential housing estate in Cibeber Cilegon surrounded by hills with wide entrance gate and commercial shophouses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6KYBUwlMHd8rl_AxjCwXBmyRLDzoHaB4yVomhTg_9bc22qm-Ha9-6xxdKNJXoXoDBEc-x1dG_BN_tml98-516LqptPSF77C2PUyj5Tw4TW9G6VtREOa6v5ZMZ23yfL20h4tHJgefT_MaKrUe-rURkqJA289Opt4mdkjTmYAvFJPgbaAbqlB6wPWi5Dn6iZ5vySJ6Jt95HKKwnriJiZB1cs-PyplpGVbIr6gr43_AJeHVY1a9OVa1jJw"/>
+<span class="absolute top-2.5 left-2.5 font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full font-bold shadow-sm">
+                    Takeover Ready
+                  </span>
+<span class="absolute bottom-2.5 right-2.5 font-label-sm text-label-sm bg-surface-container-lowest/90 backdrop-blur text-on-surface px-2 py-0.5 rounded font-semibold">
+                    Kota Cilegon
+                  </span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold line-clamp-1">Harmoni Cibeber Regency</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Cibeber, Cilegon (Kawasan Industri Krakatau)</span>
+</div>
+<div class="flex flex-col gap-2 pt-2">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Progress Fisik Lapangan</span>
+<span class="font-bold text-on-surface">62%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 62%;"></div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-1">
+<span>Total: <strong>60 Unit</strong></span>
+<span class="text-on-surface font-bold">24 Unit Takeover</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2 pt-3">
+<div class="grid grid-cols-2 gap-2">
+<button class="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors text-center" type="button">
+                    Kelola Unit
+                  </button>
+<button class="px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors text-center" type="button">
+                    Kemitraan BSI
+                  </button>
+</div>
+<button class="w-full px-3 py-2 rounded-xl bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold hover:bg-primary hover:text-on-primary transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">edit</span>
+<span>Edit Cluster & Harga</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Tabel Moderasi & Manajemen Semua Listing -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Moderasi & Manajemen Semua Listing</h2>
+<span class="font-label-sm text-label-sm bg-primary-container text-on-primary px-2.5 py-0.5 rounded-full font-bold">Full Access</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Listing Proyek Konsorsium Pengembang & Takeover Resmi Member Se-Banten</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-semibold hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-base">file_download</span>
+<span>Export Excel</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Tambah Listing</span>
+</button>
+</div>
+</div>
+<!-- Filter Tabs -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1">
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-semibold whitespace-nowrap shadow-sm" type="button">
+              Semua Listing (142)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+              Listing Proyek Pengembang (96)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface font-label-md text-label-md font-medium hover:bg-surface-container-high transition-colors whitespace-nowrap" type="button">
+              Listing Takeover Member (46)
+            </button>
+<button class="px-4 py-2 rounded-xl bg-error-container text-on-error-container font-label-md text-label-md font-bold hover:bg-error hover:text-on-error transition-colors whitespace-nowrap flex items-center gap-1.5" type="button">
+<span>Menunggu Verifikasi Notaris</span>
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="bg-error text-on-error px-1.5 py-0.2 rounded-full text-[10px]">7</span>
+</button>
+</div>
+<!-- Search & Filter Controls -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-3">
+<div class="md:col-span-5 relative">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-lg">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/70 focus:outline-none focus:bg-surface-container-lowest shadow-inner" placeholder="Cari ID listing, nama pemilik, lokasi, no telp..." type="text"/>
+</div>
+<div class="md:col-span-3">
+<select class="w-full px-3 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option value="">Semua Wilayah Banten</option>
+<option value="serang-kota">Kota Serang</option>
+<option value="serang-kab">Kabupaten Serang</option>
+<option value="cilegon">Kota Cilegon</option>
+<option value="lebak">Kab. Lebak & Pandeglang</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full px-3 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option value="">Semua Bank KPR</option>
+<option value="btn">Bank BTN KC Serang</option>
+<option value="bsi">Bank BSI Syariah</option>
+<option value="mandiri">Bank Mandiri</option>
+</select>
+</div>
+<div class="md:col-span-2">
+<select class="w-full px-3 py-2.5 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option value="">Status Legalitas</option>
+<option value="valid">Verifikasi Valid</option>
+<option value="pending">Menunggu Notaris</option>
+<option value="draft">Draf / Revisi</option>
+</select>
+</div>
+</div>
+<!-- Data Table -->
+<div class="overflow-x-auto -mx-6">
+<div class="inline-block min-w-full align-middle px-6">
+<table class="min-w-full divide-y-0">
+<thead>
+<tr class="bg-surface-container-high text-left">
+<th class="py-3.5 pl-4 pr-3 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider rounded-l-xl" scope="col">ID & Unit Properti</th>
+<th class="px-3 py-3.5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" scope="col">Tipe</th>
+<th class="px-3 py-3.5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" scope="col">Pemilik Listing (Access Admin)</th>
+<th class="px-3 py-3.5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" scope="col">Bank KPR</th>
+<th class="px-3 py-3.5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" scope="col">Ganti DP / Harga</th>
+<th class="px-3 py-3.5 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider" scope="col">Status Legalitas Notaris</th>
+<th class="py-3.5 pl-3 pr-4 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider text-right rounded-r-xl" scope="col">Aksi Developer</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 (Takeover Member) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 pl-4 pr-3">
+<div class="flex items-center gap-3">
+<div class="w-14 h-14 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Small modern compact renovated house in Puri Angsana Serang with painted front porch and motorcycle carport." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkbVcBjk8xO9xt6eGx72W7ikkAr1hhwXLYvuckrtfNY5EsrigU-87iQpRg-MlXbltlEtlvIJlwyEhOxtHubEkI1eWaBeRlMbVv1sp5efd9mzf7JAA-qlAvv45e23lJjoZhlfwcjjXFlTOauXdKuIjzWUZnAteWjSHo4m0Fraw4a2PYTAAUer_cK0Gr8PyAv4uYXAQMqDsC9dHcGghhpIRVzLTYmZaZLELRD9AYOijPJxEhx_yiGAyw6g"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-bold">#CR-TO-0941</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Takeover Puri Angsana 36/60</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Blok D2 No. 14, Kota Serang</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full font-bold">
+                        Takeover KPR
+                      </span>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-bold text-xs">
+                          BS
+                        </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Budi Santoso</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Member (0812-8821-xxxx)</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">BTN KC Serang</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sisa 11 Th (Angs. 1,02 Jt)</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-extrabold text-tertiary">Rp 45.000.000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ganti DP Resmi</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold w-max">
+<span class="material-symbols-outlined text-xs">verified</span>
+                          Verifikasi Akad Valid
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notaris H. Faisal, S.H.</span>
+</div>
+</td>
+<td class="py-4 pl-3 pr-4 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Audit Dokumen" type="button">
+<span class="material-symbols-outlined text-lg">folder_shared</span>
+</button>
+<button class="p-2 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors" title="Edit Listing Sebagai Admin" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Pilihan Tindakan" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 (Subsidi Developer) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 pl-4 pr-3">
+<div class="flex items-center gap-3">
+<div class="w-14 h-14 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Brand new freshly painted white and blue subsidized housing unit with small front yard ready for handover in Kramatwatu Serang." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9s0IXlaq6TpjZQzR9_TxhsPe1xPS4RFKbMgOP8DxHr-j7REJ9IGOHoST4CulBc3w5dueIuwzh6R6aR0T7dlaECA3kwRckWg8nA3MEbU93OaQzeqCPX7WE6Zsa5ShJVcyt74ngWkMrQLtLGtsHLZuFujyF0mdO2gKMCYFrjVPX2Lvri6EAIW69mgyPudNvqu0ynZjN7DHn6JgBpLq5hx0QZKrZeRFfmWexzu_CTPIAOaGZkFbgFFN-wA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-bold">#CR-FLPP-1082</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Pesona Kramatwatu Blok B4</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tipe 30/60 Standar PUPR</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full font-bold">
+                        Subsidi Baru FLPP
+                      </span>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary font-bold text-xs">
+                          SC
+                        </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">PT Serang Cipta Graha</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Pengembang Resmi (Konsorsium)</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">BTN & BSI Syariah</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bunga Flat 5% / 20 Th</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Rp 166.000.000</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Subsidi Uang Muka Rp 4 Jt</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-primary-container text-on-primary px-2 py-0.5 rounded-full font-bold w-max">
+<span class="material-symbols-outlined text-xs">task_alt</span>
+                          SP3K Disetujui
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Debitur: Aep Suhendar</span>
+</div>
+</td>
+<td class="py-4 pl-3 pr-4 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Audit Berkas KPR" type="button">
+<span class="material-symbols-outlined text-lg">folder_shared</span>
+</button>
+<button class="p-2 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors" title="Edit Listing" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Pilihan Tindakan" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 (Takeover Member Waiting Notary) -->
+<tr class="hover:bg-surface-container-low transition-colors bg-surface-container-low/40">
+<td class="py-4 pl-4 pr-3">
+<div class="flex items-center gap-3">
+<div class="w-14 h-14 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Residential home in Cibeber Cilegon with green mountain backdrop, family home facade with tiled terrace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0_xOOKe-LQ5q0DafIAYp_2g59f43RVKjjBni9ki8cL7LBTbHpD_ytupA5aY-9uIgxhetxRASwW4HEW4qbIUwcoFBCTTzb6raJLDra4u4dvMz9lmGRuCY9B1be8_LxivSgHgIIpzj0zjEL-W12fGKWvj4NSiVY1sLBHIbaeGSXZAoBVyoc13tAHIDVmTPG7Sqp8l6UCUA411wujdv2z6XpgYiOZYnXqcYtyco2SmngpYN4BraVy4IXAA"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-bold">#CR-TO-0938</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Takeover Harmoni Regency</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Blok G-05, Cibeber Cilegon</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full font-bold">
+                        Takeover KPR
+                      </span>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container font-bold text-xs">
+                          SA
+                        </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Siti Aminah</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Member (0877-3312-xxxx)</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">BSI Cilegon</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Murabahah Sisa 14 Th</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-extrabold text-tertiary">Rp 38.500.000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Ganti DP Nego Tipis</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-bold w-max">
+<span class="material-symbols-outlined text-xs">pending</span>
+                          Menunggu Cek Sertifikat
+                        </span>
+<span class="font-label-sm text-label-sm text-error font-medium">BPN Serang (Plotting 48%)</span>
+</div>
+</td>
+<td class="py-4 pl-3 pr-4 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="px-2.5 py-1.5 rounded-xl bg-tertiary text-on-tertiary hover:bg-tertiary-container hover:text-on-tertiary-container transition-colors font-label-sm text-label-sm font-bold flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-sm">check_circle</span>
+<span>Setujui</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Edit Listing" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-2 rounded-xl bg-error-container text-error hover:bg-error hover:text-on-error transition-colors" title="Hapus Listing" type="button">
+<span class="material-symbols-outlined text-lg">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 (Subsidi Developer Ready) -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-4 pl-4 pr-3">
+<div class="flex items-center gap-3">
+<div class="w-14 h-14 rounded-xl overflow-hidden bg-surface-container flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Model house in residential development complex in Kragilan Serang with landscaped lawn and modern minimalist facade." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOBCBy8W2f2ptd9U71X4_hNDmF3JofGRB8RfWLQ6sCX4fZ5rSfgGAPyCyGRRGcJfP2cBJQubVcRKkBopHtsO5N9Tqo08yEfvUwOY98gaWUIVh_tyzegAaB1ROe8kMgEq8FG0A6H1CWDmuY-xhJIzA7r_a1RaxbrmpMXRB7MxDZZ0JDkJ8RskzGqWWfMhgEt_9XyXkCaEZrsmDHfkw4G-vRLzC4Fy20Nwh8hPPCtQCJ6KIYDh5jcYeN5Q"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-primary font-bold">#CR-FLPP-1080</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Graha Kragilan Asri Blok C-02</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tipe 36/72 Hook Subsidi</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full font-bold">
+                        Subsidi Baru FLPP
+                      </span>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary font-bold text-xs">
+                          BM
+                        </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">PT Banten Makmur Sentosa</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Developer Partner</span>
+</div>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">BTN KC Cilegon</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">FLPP Angsuran Rp 1,08 Jt</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm font-extrabold text-on-surface">Rp 166.000.000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Biaya Proses All-in Rp 0</span>
+</div>
+</td>
+<td class="px-3 py-4 whitespace-nowrap">
+<div class="flex flex-col gap-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-bold w-max">
+<span class="material-symbols-outlined text-xs">verified</span>
+                          Verifikasi Akad Valid
+                        </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Notaris Ny. Ratna, S.H.</span>
+</div>
+</td>
+<td class="py-4 pl-3 pr-4 whitespace-nowrap text-right">
+<div class="flex items-center justify-end gap-1.5">
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-colors" title="Audit Berkas" type="button">
+<span class="material-symbols-outlined text-lg">folder_shared</span>
+</button>
+<button class="p-2 rounded-xl bg-primary text-on-primary hover:bg-primary-container transition-colors" title="Edit Listing" type="button">
+<span class="material-symbols-outlined text-lg">edit</span>
+</button>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" title="Pilihan Tindakan" type="button">
+<span class="material-symbols-outlined text-lg">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Pagination Bar -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+              Menampilkan <strong>1 - 4</strong> dari <strong>142</strong> listing terdaftar di Banten
+            </span>
+<div class="flex items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors disabled:opacity-50" disabled="" type="button">
+                Sebelumnya
+              </button>
+<button class="w-8 h-8 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-bold flex items-center justify-center" type="button">
+                1
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center" type="button">
+                2
+              </button>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center" type="button">
+                3
+              </button>
+<span class="px-1 text-on-surface-variant font-bold">...</span>
+<button class="w-8 h-8 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors flex items-center justify-center" type="button">
+                12
+              </button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors" type="button">
+                Berikutnya
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Developer Widgets & Audit Logs (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6 min-w-0">
+<!-- Widget 1: Integrasi API Bank & SIKumbang -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="p-2 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-lg">api</span>
+</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Integrasi API Bank & PPAT</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Koneksi Gateway Sistem FLPP</span>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse" title="Sistem Online"></span>
+</div>
+<div class="flex flex-col gap-3">
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-primary">account_balance</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Webhook BTN FLPP Direct</span>
+</div>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary font-bold px-2 py-0.5 rounded-full flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>LIVE 42ms
+                </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Auto-sync validasi berkas NIK & riwayat angsuran KPR nasabah.</p>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-tertiary">pie_chart</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Kuota FLPP Banten 2026</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-bold">1.240 Sisa</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 74%;"></div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-right">Terserap 74% dari target kaveling regional</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-secondary">gavel</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Notaris PPAT Terkoneksi</span>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-2 py-0.5 rounded-full font-bold">4 Kantor</span>
+</div>
+<div class="flex flex-col gap-1 pt-1 font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center justify-between">
+<span>Kantor Notaris H. Faisal, M.Kn (Serang)</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Aktif</span>
+</div>
+<div class="flex items-center justify-between">
+<span>Kantor Notaris Ny. Ratna, S.H. (Cilegon)</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Aktif</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Widget 2: Antrean Verifikasi Berkas Member Terkini -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">rule_folder</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Antrean Verifikasi Dokumen</h3>
+</div>
+<span class="font-label-sm text-label-sm text-error font-bold bg-error-container px-2 py-0.5 rounded-full">3 Prioritas</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Item 1 -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Budi Santoso (Member)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Upload Bukti Rekening Koran & SK Kerja BTN</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">5m lalu</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">Takeover Puri Angsana</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container transition-colors" type="button">
+                  Cek Berkas
+                </button>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Rahmat Hidayat (Calon Debitur)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pengecekan SLIK OJK Mandiri & NPWP</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">22m lalu</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Cluster Kramatwatu 2</span>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm font-semibold hover:bg-surface-container-high transition-colors" type="button">
+                  Validasi
+                </button>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex flex-col gap-2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Siti Aminah (Member)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sertifikat SHM & PBB Terakhir Diunggah</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">1j lalu</span>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-error font-semibold">Perlu Audit Notaris</span>
+<button class="px-3 py-1.5 rounded-lg bg-primary text-on-primary font-label-sm text-label-sm font-semibold hover:bg-primary-container transition-colors" type="button">
+                  Cek Berkas
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Widget 3: Aktivitas Audit Log Developer -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-xl">history</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Aktivitas Audit Log Developer</h3>
+</div>
+<a class="font-label-sm text-label-sm text-primary font-bold hover:underline" href="#">Semua Log</a>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">security</span>
+</div>
+<div class="flex flex-col">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="text-on-surface">Hendrawan, S.T. (Admin)</strong> menyetujui rilis listing Takeover ID <span class="text-primary font-bold">CR-SRG-882</span>.
+                </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">14 menit yang lalu</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">description</span>
+</div>
+<div class="flex flex-col">
+<p class="font-body-sm text-body-sm text-on-surface">
+<strong class="text-on-surface">Notaris Faisal S.H.</strong> mengunggah draf akta kuasa menjual untuk unit <span class="font-bold">Blok C-12 Bougenville</span>.
+                </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42 menit yang lalu</span>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-7 h-7 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed flex-shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm">cloud_sync</span>
+</div>
+<div class="flex flex-col">
+<p class="font-body-sm text-body-sm text-on-surface">
+                  Sistem otomatis menyelaraskan 14 kuota FLPP dari <strong class="text-on-surface">Bank BTN Pusat</strong>.
+                </p>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 jam yang lalu</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

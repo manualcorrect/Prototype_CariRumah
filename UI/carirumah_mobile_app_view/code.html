@@ -1,0 +1,431 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>CariRumah - PropTech &amp; Rumah Subsidi Banten</title>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Setup: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Phosphor Icons CDN -->
+<script src="https://unpkg.com/@phosphor-icons/web"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/thin/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/bold/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/duotone/style.css">
+<script data-purpose="tailwind-config">
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              500: '#1d4ed8',
+              600: '#1e40af',
+              700: '#1e3a8a',
+              800: '#172554',
+              accent: '#0284c7',
+            },
+            wa: {
+              500: '#25D366',
+              600: '#1ebe5d',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-layout">
+    /* Custom scrollbar hiding for horizontal chip flows */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    
+    /* Device frame simulation for iOS viewport */
+    body {
+      background-color: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mobile-screen {
+      width: 100%;
+      max-width: 420px;
+      min-height: 100vh;
+      background-color: #ffffff;
+      position: relative;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body class="bg-slate-100 text-slate-800">
+<div class="mobile-screen">
+<!-- BEGIN: TopBar -->
+<!-- Minimalist Status/Top Bar inspired by iOS Header -->
+<header class="sticky top-0 z-40 bg-white border-b border-slate-100" data-purpose="top-navigation-header">
+<div class="px-4 py-2.5 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-1.5 focus:outline-none" href="#">
+<div class="w-8 h-8 rounded-lg bg-blue-700 flex items-center justify-center text-white shadow-sm">
+<i class="ph-bold ph-house-line text-lg"></i>
+</div>
+<div>
+<div class="flex items-center leading-none">
+<span class="text-lg font-black tracking-tight text-blue-900">Cari<span class="text-sky-500">Rumah</span></span>
+</div>
+<span class="text-[9px] font-semibold text-slate-400 uppercase tracking-widest block leading-none">Banten PropTech</span>
+</div>
+</a>
+<!-- Action Buttons Right -->
+<div class="flex items-center gap-2">
+<!-- WhatsApp Contact Button -->
+<a class="flex items-center gap-1 bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200/80 px-2.5 py-1.5 rounded-full text-xs font-bold transition-all shadow-xs" href="https://wa.me/628123456789"><i class="ph-fill ph-whatsapp-logo text-emerald-600 text-sm"></i><span class="">Konsultasi</span></a>
+<!-- Hamburger Menu Icon -->
+<button aria-label="Buka Menu" class="p-1.5 rounded-lg text-slate-700 hover:bg-slate-100">
+<i class="ph-bold ph-list text-2xl"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: SearchHeroSection -->
+<!-- Hero banner area with interactive segment switcher and search box -->
+<section class="bg-gradient-to-b from-blue-700 via-blue-800 to-blue-900 pt-3 pb-5 px-4 text-white rounded-b-[24px] shadow-md" data-purpose="search-hero">
+<p class="text-xs text-blue-200 font-medium text-center mb-3">
+        Temukan Rumah Subsidi &amp; Takeover Aman di Banten
+      </p>
+<!-- Segment Tabs -->
+<div class="bg-blue-950/40 p-1 rounded-xl flex items-center justify-between mb-3.5 backdrop-blur-xs border border-blue-600/30">
+<button class="flex-1 py-1.5 text-xs font-bold rounded-lg bg-white text-blue-900 shadow-sm transition-all text-center">
+          Subsidi FLPP
+        </button>
+<button class="flex-1 py-1.5 text-xs font-semibold text-blue-100 hover:text-white transition-all text-center">
+          Takeover KPR
+        </button>
+<button class="flex-1 py-1.5 text-xs font-semibold text-blue-100 hover:text-white transition-all text-center">
+          RenovRumah
+        </button>
+</div>
+<!-- Main Search Input Bar -->
+<div class="relative flex items-center">
+<div class="absolute left-3.5 text-slate-400 flex items-center pointer-events-none">
+<i class="ph-bold ph-magnifying-glass text-lg"></i>
+</div>
+<input class="w-full pl-10 pr-20 py-2.5 bg-white text-slate-800 rounded-xl text-xs sm:text-sm font-medium placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-400 border-none shadow-sm" placeholder="Cari lokasi perumahan, Serang, Cilegon..." type="text">
+<button class="absolute right-1.5 bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 transition-colors">
+<span class="">Cari</span>
+</button>
+</div>
+<!-- Quick Location Badge Tags -->
+<div class="flex items-center gap-1.5 mt-2.5 overflow-x-auto no-scrollbar text-[11px] text-blue-100">
+<span class="text-blue-300 font-medium shrink-0">Populer:</span>
+<a class="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-md shrink-0" href="#">Kramatwatu</a>
+<a class="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-md shrink-0" href="#">Ciruas</a>
+<a class="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-md shrink-0" href="#">Walantaka</a>
+<a class="bg-white/10 hover:bg-white/20 px-2 py-0.5 rounded-md shrink-0" href="#">Cibeber Cilegon</a>
+</div>
+</section>
+<!-- END: SearchHeroSection -->
+<!-- BEGIN: QuickAccessGrid -->
+<!-- 8 Quick Icon Shortcuts matching the screenshot structure -->
+
+<!-- END: QuickAccessGrid -->
+<!-- BEGIN: InteractiveMapPromoBanner -->
+<!-- Interactive Regional Map & Rate Feature Card -->
+<section class="px-4 mb-5 mt-5" data-purpose="banten-map-promo-banner">
+<div class="p-3.5 bg-gradient-to-r from-sky-50 via-blue-50 to-indigo-50 border border-sky-200 rounded-2xl flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 bg-blue-700 text-white rounded-xl flex items-center justify-center text-xl shrink-0 shadow-sm">
+<i class="ph-fill ph-map-pin-line"></i>
+</div>
+<div>
+<span class="text-[10px] font-bold uppercase tracking-wider text-blue-700 block">Zonasi Banten 2026</span>
+<h4 class="text-xs font-bold text-slate-900 leading-snug">Peta Harga &amp; Rumah Subsidi</h4>
+<p class="text-[11px] text-slate-600">Cek kuota FLPP Serang &amp; Cilegon</p>
+</div>
+</div>
+<a class="w-8 h-8 rounded-full bg-white text-blue-700 flex items-center justify-center border border-blue-200 shadow-xs" href="#">
+<i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</section>
+<!-- END: InteractiveMapPromoBanner -->
+<!-- BEGIN: SubsidyHeroHighlight -->
+<!-- Banner for special interest rate / promo bank kerjasama -->
+<section class="px-4 mb-6" data-purpose="flpp-rate-banner">
+<div class="relative overflow-hidden bg-gradient-to-br from-blue-900 to-indigo-950 rounded-2xl p-4 text-white shadow-md">
+<!-- Decorative circular glow background -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-sky-500/20 rounded-full blur-2xl"></div>
+<div class="relative z-10 flex flex-col justify-between">
+<div class="flex items-center gap-1.5 mb-2">
+<span class="bg-amber-400 text-slate-900 text-[10px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">Promo Khusus</span>
+<span class="text-[11px] text-blue-200">Gaji 3 - 8 Juta / Bulan</span>
+</div>
+<h3 class="text-base font-extrabold text-white leading-tight mb-1">
+            Bunga 5% Flat Tenor s/d 20 Tahun!
+          </h3>
+<p class="text-xs text-blue-200 mb-3.5 leading-relaxed">
+            Rumah siap huni mulai angsuran 1 Jutaan/bln. Bebas PPN, Gratis Asuransi, &amp; Bantuan Uang Muka (SBUM).
+          </p>
+<div class="flex items-center gap-2">
+<a class="flex-1 bg-wa-500 hover:bg-wa-600 text-white font-bold py-2 px-3 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors shadow-sm" href="https://wa.me/628123456789?text=Halo%20Admin%20CariRumah,%20saya%20mau%20cek%20syarat%20KPR%20Subsidi%20Banten">
+<i class="ph-fill ph-whatsapp-logo text-base"></i>
+<span class="">Klaim Kuota FLPP via WA</span>
+</a>
+<button class="bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3 py-2 rounded-xl transition-colors">
+              Syarat
+            </button>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SubsidyHeroHighlight -->
+<!-- BEGIN: FilterChipsHorizontal -->
+<!-- Filter tabs based on screenshot style (IMAGE_3) -->
+<section class="px-4 mb-4" data-purpose="quick-filter-chips">
+<div class="flex items-center justify-between mb-2">
+<h3 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Kategori Pilihan</h3>
+<span class="text-[11px] text-blue-700 font-semibold cursor-pointer">Reset Filter</span>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 text-xs">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-blue-700 text-white font-semibold shrink-0 shadow-xs">
+<i class="ph-bold ph-sliders-horizontal"></i>
+<span class="">Filter (2)</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium shrink-0 border border-slate-200">
+          Siap Huni (235)
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium shrink-0 border border-slate-200">
+          DP 0%
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium shrink-0 border border-slate-200">
+          Dekat Pintu Tol Serang
+        </button>
+<button class="px-3 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-medium shrink-0 border border-slate-200">
+          Stasiun Cilegon
+        </button>
+</div>
+</section>
+<!-- END: FilterChipsHorizontal -->
+<!-- BEGIN: PopularPropertiesList -->
+<!-- Real Estate Feed & Cards (Inspired by IMAGE_3 & IMAGE_5) -->
+<section class="px-4 mb-6" data-purpose="property-listings-section">
+<div class="flex items-center justify-between mb-3">
+<div>
+<h2 class="text-base font-bold text-slate-900 leading-tight">Rumah Subsidi Populer di Banten</h2>
+<p class="text-xs text-slate-500">Menampilkan listing terverifikasi dan siap akad</p>
+</div>
+<a class="text-xs font-bold text-blue-700 flex items-center" href="#">
+          Lihat Semua <i class="ph-bold ph-caret-right ml-0.5"></i>
+</a>
+</div>
+<!-- Property Card 1: Rumah Subsidi Kramatwatu -->
+<article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs mb-4">
+<!-- Listing Image & Floating Badges -->
+<div class="relative h-44 w-full bg-slate-200">
+<img alt="Perumahan Subsidi Modern Banten" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjFO-TtQvfZ9Bhr2zJTVW85f8IaIugEsGQsW-_7UGgCLAsc0OL-bM1daYfulNoUPiXtXmOGtpXKeZFJ-CILSxQbrX811VLwijFTPe3Dt0twUS76tzQBs5sZwUTle_ycBoAkr6v5ExQeRh45terWZVRqppglwnzNBLTANXoQdGTGpXwE3-TZ2hYUpbQ4wVurEf4wGRi1c5ULtmkYE04IFtyyOQG81A-mluOBXSCXikBZq7sRISQMwl2sQ">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="bg-blue-600 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-md uppercase tracking-wider">
+              Subsidi FLPP
+            </span>
+<span class="bg-emerald-600 text-white font-bold text-[10px] px-2 py-0.5 rounded-md">
+              Siap Akad
+            </span>
+</div>
+<!-- Bookmark Button -->
+<button aria-label="Simpan Properti" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-slate-700 flex items-center justify-center hover:text-blue-700 shadow-sm">
+<i class="ph-bold ph-bookmark-simple text-base"></i>
+</button>
+<!-- Photo Counter badge -->
+<div class="absolute bottom-2.5 right-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+<i class="ph-bold ph-camera"></i>
+<span class="">8 Foto</span>
+</div>
+</div>
+<!-- Listing Details -->
+<div class="p-3.5">
+<!-- Price Tag -->
+<div class="flex items-baseline justify-between mb-1">
+<div>
+<span class="text-lg font-black text-blue-900 tracking-tight">Rp 166.000.000</span>
+<span class="text-[11px] text-slate-500 block font-medium">Cicilan mulai <strong>Rp 1,05 Jt</strong> /bln (Flat)</span>
+</div>
+<span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded">
+              DP 1%
+            </span>
+</div>
+<!-- Title & Location -->
+<h3 class="text-sm font-bold text-slate-800 line-clamp-1 hover:text-blue-700 transition-colors">
+            Griya Asri Cilegon - Kramatwatu Tipe 36/60
+          </h3>
+<p class="text-xs text-slate-500 flex items-center gap-1 mt-0.5 mb-2.5">
+<i class="ph-fill ph-map-pin text-rose-500"></i>
+<span class="">Kramatwatu, Kab. Serang (7 Menit ke Tol Serang Barat)</span>
+</p>
+<!-- Specifications Row -->
+<div class="flex items-center gap-3 py-2 border-y border-slate-100 text-xs text-slate-600 mb-3">
+<span class="flex items-center gap-1"><i class="ph-bold ph-bed text-blue-600"></i> 2 KT</span>
+<span class="flex items-center gap-1"><i class="ph-bold ph-bathtub text-blue-600"></i> 1 KM</span>
+<span class="flex items-center gap-1"><i class="ph-bold ph-arrows-out-cardinal text-blue-600"></i> LT 60m²</span>
+<span class="flex items-center gap-1"><i class="ph-bold ph-frame-corners text-blue-600"></i> LB 36m²</span>
+</div>
+<!-- Action CTA -->
+<div class="flex items-center gap-2">
+<a class="flex-1 bg-wa-500 hover:bg-wa-600 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-colors" href="https://wa.me/628123456789?text=Halo,%20saya%20tertarik%20dengan%20Griya%20Asri%20Kramatwatu">
+<i class="ph-fill ph-whatsapp-logo text-base"></i>
+<span class="">Hubungi Pengembang</span>
+</a>
+<button class="px-3 py-2 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50">
+              Detail
+            </button>
+</div>
+</div>
+</article>
+<!-- Property Card 2: Takeover KPR Siap Huni -->
+<article class="bg-white border border-slate-200/80 rounded-2xl overflow-hidden shadow-xs">
+<div class="relative h-44 w-full bg-slate-200">
+<img alt="Takeover KPR Rumah Banten" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKGq254fqk-D8n23B568x3y9MWdrMRX3eShQgT2lnxk42q9zxSZSt2iwMUSvldofaokpt0DAilvqFU3gqyYnRhu70y58PuSZBK2q2oB-lngqNEQUGdW3AgbRdz_RugTGVVKFWUC5RBvJzo15dwBBnXMGRvHOuoMbvj-UzX3oCfYYpbp4LSplQXhWma7WgKvbZbnO8fF68TXfNs8AthQMxBm41BWvamf7qar3ef1azeZRivKmBmtilUkQ">
+<div class="absolute top-3 left-3 flex flex-wrap gap-1.5">
+<span class="bg-purple-700 text-white font-extrabold text-[10px] px-2 py-0.5 rounded-md uppercase tracking-wider">
+              Takeover Resmi
+            </span>
+<span class="bg-amber-500 text-slate-900 font-bold text-[10px] px-2 py-0.5 rounded-md">
+              Sudah Renov Dapur
+            </span>
+</div>
+<button aria-label="Simpan Properti" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-slate-700 flex items-center justify-center hover:text-blue-700 shadow-sm">
+<i class="ph-bold ph-bookmark-simple text-base"></i>
+</button>
+<div class="absolute bottom-2.5 right-3 bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2 py-0.5 rounded-full flex items-center gap-1">
+<i class="ph-bold ph-camera"></i>
+<span class="">12 Foto</span>
+</div>
+</div>
+<div class="p-3.5">
+<div class="flex items-baseline justify-between mb-1">
+<div>
+<span class="text-lg font-black text-purple-900 tracking-tight">Ganti DP: Rp 45.000.000</span>
+<span class="text-[11px] text-slate-500 block font-medium">Sisa Pokok KPR BTN <strong>Rp 980 Rb</strong> /bln</span>
+</div>
+<span class="text-[10px] font-semibold text-purple-700 bg-purple-50 border border-purple-200 px-1.5 py-0.5 rounded">
+              Sisa 12 Thn
+            </span>
+</div>
+<h3 class="text-sm font-bold text-slate-800 line-clamp-1 hover:text-purple-700 transition-colors">
+            Perum Cilegon Hills Tipe 36/72 - Siap Langsung Huni
+          </h3>
+<p class="text-xs text-slate-500 flex items-center gap-1 mt-0.5 mb-2.5">
+<i class="ph-fill ph-map-pin text-rose-500"></i>
+<span class="">Cibeber, Kota Cilegon (Dekat Mall &amp; RSKM)</span>
+</p>
+<div class="flex items-center gap-3 py-2 border-y border-slate-100 text-xs text-slate-600 mb-3">
+<span class="flex items-center gap-1"><i class="ph-bold ph-bed text-purple-600"></i> 2 KT</span>
+<span class="flex items-center gap-1"><i class="ph-bold ph-bathtub text-purple-600"></i> 1 KM</span>
+<span class="flex items-center gap-1"><i class="ph-bold ph-arrows-out-cardinal text-purple-600"></i> LT 72m²</span>
+<span class="flex items-center gap-1"><i class="ph-bold ph-shield-check text-emerald-600"></i> Akta Notaris</span>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex-1 bg-wa-500 hover:bg-wa-600 text-white font-bold py-2 rounded-xl text-xs flex items-center justify-center gap-1.5 shadow-xs transition-colors" href="https://wa.me/628123456789?text=Halo,%20tanya%20prosedur%20Takeover%20Cilegon%20Hills">
+<i class="ph-fill ph-whatsapp-logo text-base"></i>
+<span class="">Konsultasi Takeover</span>
+</a>
+<button class="px-3 py-2 border border-slate-200 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50">
+              Cek Berkas
+            </button>
+</div>
+</div>
+</article>
+</section>
+<!-- END: PopularPropertiesList -->
+<!-- BEGIN: RenovRumahFeature -->
+<!-- Special PropTech segment for 3D model renovation and transparent RAB -->
+<section class="px-4 mb-24" data-purpose="renov-rumah-service">
+<div class="bg-gradient-to-br from-amber-50 to-orange-50 border border-amber-200/90 rounded-2xl p-4 shadow-xs">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 bg-amber-500 text-white rounded-lg flex items-center justify-center text-base shadow-xs">
+<i class="ph-bold ph-paint-brush"></i>
+</div>
+<h3 class="text-sm font-bold text-slate-900">RenovRumah Subsidi Banten</h3>
+</div>
+<span class="text-[10px] font-bold text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-full">RAB Transparan</span>
+</div>
+<p class="text-xs text-slate-600 mb-3 leading-relaxed">
+          Upgrade dapur tertutup, pasang kanopi carport, dan interior minimalis rumah subsidi dengan visual 3D &amp; estimasi biaya presisi.
+        </p>
+<!-- Feature Points -->
+<div class="grid grid-cols-2 gap-2 mb-3.5">
+<div class="bg-white/80 border border-amber-100 rounded-xl p-2 flex items-center gap-2">
+<i class="ph-fill ph-check-circle text-amber-600 text-base shrink-0"></i>
+<span class="text-[11px] font-semibold text-slate-700 leading-tight">Paket Dapur &amp; Tembok Belakang</span>
+</div>
+<div class="bg-white/80 border border-amber-100 rounded-xl p-2 flex items-center gap-2">
+<i class="ph-fill ph-check-circle text-amber-600 text-base shrink-0"></i>
+<span class="text-[11px] font-semibold text-slate-700 leading-tight">Bisa Dicicil via Bank KPR</span>
+</div>
+</div>
+<a class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-2 transition-colors shadow-sm" href="https://wa.me/628123456789?text=Halo%20RenovRumah,%20saya%20mau%20konsultasi%20desain%203D%20dan%20RAB">
+<i class="ph-bold ph-cube text-amber-400"></i>
+<span class="">Konsultasi Simulasi 3D &amp; RAB Gratis</span>
+</a>
+</div>
+</section>
+<!-- END: RenovRumahFeature -->
+<!-- BEGIN: FloatingWhatsAppCTA -->
+<!-- Quick Access Floating Action Button -->
+<aside class="fixed bottom-20 right-4 sm:right-[calc(50%-190px)] z-40" data-purpose="floating-action-button">
+<a aria-label="Chat WhatsApp Admin" class="flex items-center gap-2 bg-wa-500 hover:bg-wa-600 text-white font-bold px-3.5 py-2.5 rounded-full shadow-lg border-2 border-white transition-transform transform active:scale-95" href="https://wa.me/628123456789">
+<i class="ph-fill ph-whatsapp-logo text-2xl"></i>
+<span class="text-xs hidden xs:inline font-bold">Tanya Agen</span>
+</a>
+</aside>
+<!-- END: FloatingWhatsAppCTA -->
+<!-- BEGIN: BottomNavigation -->
+<!-- Sticky iOS styled 5-tab Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 max-w-[420px] mx-auto bg-white/95 backdrop-blur-md border-t border-slate-200 z-50 px-2 py-1.5" data-purpose="bottom-tab-navigation">
+<div class="grid grid-cols-5 text-center">
+<!-- Tab: Beranda (Active) -->
+<a class="flex flex-col items-center justify-center text-blue-700 py-1" href="#">
+<i class="ph-fill ph-house text-xl mb-0.5"></i>
+<span class="text-[10px] font-bold">Beranda</span>
+</a>
+<!-- Tab: Cari/Wilayah -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-700 py-1 transition-colors" href="#">
+<i class="ph-bold ph-magnifying-glass text-xl mb-0.5"></i>
+<span class="text-[10px] font-medium">Wilayah</span>
+</a>
+<!-- Tab: Renov -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-700 py-1 transition-colors" href="#">
+<div class="relative">
+<i class="ph-bold ph-hammer text-xl mb-0.5"></i>
+<span class="absolute -top-1 -right-1.5 w-2 h-2 bg-amber-500 rounded-full"></span>
+</div>
+<span class="text-[10px] font-medium">Renov</span>
+</a>
+<!-- Tab: Simpan / Favorit -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-700 py-1 transition-colors" href="#">
+<i class="ph-bold ph-bookmark text-xl mb-0.5"></i>
+<span class="text-[10px] font-medium">Simpan</span>
+</a>
+<!-- Tab: Akun -->
+<a class="flex flex-col items-center justify-center text-slate-500 hover:text-blue-700 py-1 transition-colors" href="#">
+<i class="ph-bold ph-user-circle text-xl mb-0.5"></i>
+<span class="text-[10px] font-medium">Akun</span>
+</a>
+</div>
+</nav>
+<!-- END: BottomNavigation -->
+</div>
+
+
+</body></html>
