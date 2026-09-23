@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Building2, 
@@ -24,18 +25,41 @@ import {
 import { WA_GLOBAL_LINK, RENOV_SERVICES, DISTRICTS_BANTEN, SUBSIDY_HOUSES } from '@/data/mockData';
 
 export default function Navbar() {
+  const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [renovDropdownOpen, setRenovDropdownOpen] = useState(false);
   const [subsidiDropdownOpen, setSubsidiDropdownOpen] = useState(false);
-  const [activeCityTab, setActiveCityTab] = useState<'all' | 'kab-serang' | 'kota-serang' | 'kota-cilegon'>('all');
+  const [activeCityTab, setActiveCityTab] = useState<'all' | 'Kabupaten Serang' | 'Kota Serang' | 'Kota Cilegon'>('all');
+
+  // Dynamic counting based on actual registered items in SUBSIDY_HOUSES
+  const getSubsidyCount = (districtName?: string, kabName?: string) => {
+    if (districtName) {
+      return SUBSIDY_HOUSES.filter(h => h.kecamatan.toLowerCase() === districtName.toLowerCase()).length;
+    }
+    if (kabName && kabName !== 'all') {
+      return SUBSIDY_HOUSES.filter(h => h.kabupaten.toLowerCase() === kabName.toLowerCase()).length;
+    }
+    return SUBSIDY_HOUSES.length;
+  };
 
   const filteredDistricts = activeCityTab === 'all'
     ? DISTRICTS_BANTEN
-    : activeCityTab === 'kab-serang'
-      ? DISTRICTS_BANTEN.filter(d => d.kab === 'Kabupaten Serang')
-      : activeCityTab === 'kota-serang'
-        ? DISTRICTS_BANTEN.filter(d => d.kab === 'Kota Serang')
-        : DISTRICTS_BANTEN.filter(d => d.kab === 'Kota Cilegon');
+    : DISTRICTS_BANTEN.filter(d => d.kab === activeCityTab);
+
+  const handleCityClick = (city: 'all' | 'Kabupaten Serang' | 'Kota Serang' | 'Kota Cilegon') => {
+    setActiveCityTab(city);
+    setSubsidiDropdownOpen(false);
+    if (city === 'all') {
+      router.push('/rumah-subsidi');
+    } else {
+      router.push(`/rumah-subsidi?kab=${encodeURIComponent(city)}`);
+    }
+  };
+
+  const handleDistrictClick = (districtName: string, kabName: string) => {
+    setSubsidiDropdownOpen(false);
+    router.push(`/rumah-subsidi?kab=${encodeURIComponent(kabName)}&kec=${encodeURIComponent(districtName)}`);
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs transition-all">
@@ -85,7 +109,7 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.98 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute left-0 top-full mt-2 w-[720px] bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-5 z-50 overflow-hidden"
+                    className="absolute left-0 top-full mt-2 w-[740px] bg-white rounded-2xl shadow-2xl border border-slate-200/90 p-5 z-50 overflow-hidden"
                   >
                     {/* Header Bar */}
                     <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
@@ -98,106 +122,125 @@ export default function Navbar() {
                       </span>
                     </div>
 
-                    {/* Content Grid: Left Tabs, Right Districts */}
+                    {/* Content Grid: Left Tabs (City/Kabupaten), Right Districts */}
                     <div className="grid grid-cols-12 gap-4">
                       
-                      {/* Left: City Filter Tabs */}
+                      {/* Left: City Filter Tabs with counts */}
                       <div className="col-span-4 space-y-1.5 border-r border-slate-100 pr-3">
                         <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-2">
-                          Pilih Wilayah:
+                          Pilih Wilayah (Kota/Kab):
                         </span>
 
                         <button
                           type="button"
-                          onClick={() => setActiveCityTab('all')}
-                          className={`w-full flex items-center justify-between p-2 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
+                          onClick={() => handleCityClick('all')}
+                          className={`w-full flex items-center justify-between p-2.5 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
                             activeCityTab === 'all'
                               ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-xs'
                               : 'text-slate-600 hover:bg-slate-50'
                           }`}
                         >
                           <span>Semua Banten</span>
-                          <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-white border border-slate-200 text-cyan-800">
+                            {getSubsidyCount()} Unit
+                          </span>
                         </button>
 
                         <button
                           type="button"
-                          onClick={() => setActiveCityTab('kab-serang')}
-                          className={`w-full flex items-center justify-between p-2 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
-                            activeCityTab === 'kab-serang'
+                          onClick={() => handleCityClick('Kabupaten Serang')}
+                          className={`w-full flex items-center justify-between p-2.5 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
+                            activeCityTab === 'Kabupaten Serang'
                               ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-xs'
                               : 'text-slate-600 hover:bg-slate-50'
                           }`}
                         >
                           <span>Kabupaten Serang</span>
-                          <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-white border border-slate-200 text-cyan-800">
+                            {getSubsidyCount(undefined, 'Kabupaten Serang')} Unit
+                          </span>
                         </button>
 
                         <button
                           type="button"
-                          onClick={() => setActiveCityTab('kota-serang')}
-                          className={`w-full flex items-center justify-between p-2 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
-                            activeCityTab === 'kota-serang'
+                          onClick={() => handleCityClick('Kota Serang')}
+                          className={`w-full flex items-center justify-between p-2.5 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
+                            activeCityTab === 'Kota Serang'
                               ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-xs'
                               : 'text-slate-600 hover:bg-slate-50'
                           }`}
                         >
                           <span>Kota Serang</span>
-                          <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                          {getSubsidyCount(undefined, 'Kota Serang') > 0 ? (
+                            <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-white border border-slate-200 text-cyan-800">
+                              {getSubsidyCount(undefined, 'Kota Serang')} Unit
+                            </span>
+                          ) : null}
                         </button>
 
                         <button
                           type="button"
-                          onClick={() => setActiveCityTab('kota-cilegon')}
-                          className={`w-full flex items-center justify-between p-2 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
-                            activeCityTab === 'kota-cilegon'
+                          onClick={() => handleCityClick('Kota Cilegon')}
+                          className={`w-full flex items-center justify-between p-2.5 rounded-xl text-xs font-bold text-left transition-all cursor-pointer ${
+                            activeCityTab === 'Kota Cilegon'
                               ? 'bg-cyan-50 text-cyan-700 border border-cyan-200 shadow-xs'
                               : 'text-slate-600 hover:bg-slate-50'
                           }`}
                         >
                           <span>Kota Cilegon</span>
-                          <ChevronRight className="w-3.5 h-3.5 opacity-60" />
+                          <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-md bg-white border border-slate-200 text-cyan-800">
+                            {getSubsidyCount(undefined, 'Kota Cilegon')} Unit
+                          </span>
                         </button>
                       </div>
 
                       {/* Right: District Cards in selected City */}
                       <div className="col-span-8 space-y-2">
                         <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 mb-1">
-                          <span>Kecamatan Pilihan Subsidi:</span>
-                          <Link 
-                            href="/rumah-subsidi" 
-                            className="text-cyan-600 hover:underline flex items-center gap-0.5"
+                          <span>Kecamatan {activeCityTab !== 'all' ? activeCityTab : 'di Banten'}:</span>
+                          <button
+                            onClick={() => handleCityClick(activeCityTab)}
+                            className="text-cyan-600 hover:underline flex items-center gap-0.5 cursor-pointer text-xs"
                           >
-                            <span>Buka Katalog Penuh</span>
+                            <span>Tampilkan Semua {activeCityTab !== 'all' ? activeCityTab : 'Banten'}</span>
                             <ChevronRight className="w-3 h-3" />
-                          </Link>
+                          </button>
                         </div>
 
-                        <div className="grid grid-cols-2 gap-2">
-                          {filteredDistricts.map((d) => (
-                            <Link
-                              key={d.name}
-                              href="/rumah-subsidi"
-                              className="flex items-center justify-between p-2.5 rounded-xl border border-slate-100 hover:border-cyan-300 hover:bg-cyan-50/40 transition-all group"
-                            >
-                              <div className="flex items-center gap-2">
-                                <div className="w-7 h-7 rounded-lg bg-cyan-100/70 text-cyan-700 flex items-center justify-center font-bold text-xs group-hover:bg-cyan-600 group-hover:text-white transition-colors">
-                                  <MapPin className="w-3.5 h-3.5" />
+                        <div className="grid grid-cols-2 gap-2 max-h-[260px] overflow-y-auto pr-1">
+                          {filteredDistricts.map((d) => {
+                            const count = getSubsidyCount(d.name);
+                            return (
+                              <button
+                                key={d.name}
+                                type="button"
+                                onClick={() => handleDistrictClick(d.name, d.kab)}
+                                className="flex items-center justify-between p-2.5 rounded-xl border border-slate-100 hover:border-cyan-300 hover:bg-cyan-50/50 transition-all text-left group cursor-pointer"
+                              >
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <div className="w-7 h-7 rounded-lg bg-cyan-100/70 text-cyan-700 flex items-center justify-center font-bold text-xs shrink-0 group-hover:bg-cyan-600 group-hover:text-white transition-colors">
+                                    <MapPin className="w-3.5 h-3.5" />
+                                  </div>
+                                  <div className="min-w-0">
+                                    <span className="text-xs font-bold text-slate-800 group-hover:text-cyan-700 block truncate">
+                                      {d.name}
+                                    </span>
+                                    <span className="text-[10px] text-slate-400 block truncate -mt-0.5">
+                                      {d.kab}
+                                    </span>
+                                  </div>
                                 </div>
-                                <div>
-                                  <span className="text-xs font-bold text-slate-800 group-hover:text-cyan-700 block">
-                                    {d.name}
+
+                                {count > 0 ? (
+                                  <span className="text-[10px] font-bold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100 shrink-0">
+                                    {count} Unit
                                   </span>
-                                  <span className="text-[10px] text-slate-400 block -mt-0.5">
-                                    {d.kab}
-                                  </span>
-                                </div>
-                              </div>
-                              <span className="text-[10px] font-bold text-cyan-700 bg-cyan-50 px-2 py-0.5 rounded-md border border-cyan-100">
-                                {d.count} Unit
-                              </span>
-                            </Link>
-                          ))}
+                                ) : (
+                                  <ChevronRight className="w-3.5 h-3.5 text-slate-300 group-hover:text-cyan-600 shrink-0" />
+                                )}
+                              </button>
+                            );
+                          })}
                         </div>
                       </div>
 

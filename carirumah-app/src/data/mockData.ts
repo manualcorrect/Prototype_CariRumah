@@ -305,12 +305,18 @@ export const RENOV_SERVICES: RenovationService[] = [
 ];
 
 export const DISTRICTS_BANTEN = [
-  { name: "Kramatwatu", kab: "Kabupaten Serang", count: 18 },
-  { name: "Ciruas", kab: "Kabupaten Serang", count: 24 },
-  { name: "Kibin", kab: "Kabupaten Serang", count: 12 },
-  { name: "Kragilan", kab: "Kabupaten Serang", count: 15 },
-  { name: "Baros", kab: "Kabupaten Serang", count: 9 },
-  { name: "Kota Serang", kab: "Kota Serang", count: 32 },
-  { name: "Cibeber", kab: "Kota Cilegon", count: 14 },
-  { name: "Jombang", kab: "Kota Cilegon", count: 11 }
+  { name: "Kramatwatu", kab: "Kabupaten Serang" },
+  { name: "Ciruas", kab: "Kabupaten Serang" },
+  { name: "Kibin", kab: "Kabupaten Serang" },
+  { name: "Kragilan", kab: "Kabupaten Serang" },
+  { name: "Baros", kab: "Kabupaten Serang" },
+  { name: "Pontang", kab: "Kabupaten Serang" },
+  { name: "Serang", kab: "Kota Serang" },
+  { name: "Cipocok Jaya", kab: "Kota Serang" },
+  { name: "Taktakan", kab: "Kota Serang" },
+  { name: "Kasemen", kab: "Kota Serang" },
+  { name: "Cibeber", kab: "Kota Cilegon" },
+  { name: "Jombang", kab: "Kota Cilegon" },
+  { name: "Purwakarta", kab: "Kota Cilegon" },
+  { name: "Ciwandan", kab: "Kota Cilegon" }
 ];
