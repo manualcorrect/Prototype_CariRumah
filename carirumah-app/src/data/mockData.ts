@@ -305,18 +305,52 @@ export const RENOV_SERVICES: RenovationService[] = [
 ];
 
 export const DISTRICTS_BANTEN = [
-  { name: "Kramatwatu", kab: "Kabupaten Serang" },
-  { name: "Ciruas", kab: "Kabupaten Serang" },
-  { name: "Kibin", kab: "Kabupaten Serang" },
-  { name: "Kragilan", kab: "Kabupaten Serang" },
-  { name: "Baros", kab: "Kabupaten Serang" },
-  { name: "Pontang", kab: "Kabupaten Serang" },
-  { name: "Serang", kab: "Kota Serang" },
-  { name: "Cipocok Jaya", kab: "Kota Serang" },
-  { name: "Taktakan", kab: "Kota Serang" },
-  { name: "Kasemen", kab: "Kota Serang" },
+  // --- KOTA CILEGON (8 Kecamatan) ---
   { name: "Cibeber", kab: "Kota Cilegon" },
+  { name: "Cilegon", kab: "Kota Cilegon" },
+  { name: "Citangkil", kab: "Kota Cilegon" },
+  { name: "Ciwandan", kab: "Kota Cilegon" },
+  { name: "Grogol", kab: "Kota Cilegon" },
   { name: "Jombang", kab: "Kota Cilegon" },
+  { name: "Pulomerak", kab: "Kota Cilegon" },
   { name: "Purwakarta", kab: "Kota Cilegon" },
-  { name: "Ciwandan", kab: "Kota Cilegon" }
+
+  // --- KOTA SERANG (6 Kecamatan) ---
+  { name: "Cipocok Jaya", kab: "Kota Serang" },
+  { name: "Curug", kab: "Kota Serang" },
+  { name: "Kasemen", kab: "Kota Serang" },
+  { name: "Serang", kab: "Kota Serang" },
+  { name: "Taktakan", kab: "Kota Serang" },
+  { name: "Walantaka", kab: "Kota Serang" },
+
+  // --- KABUPATEN SERANG (29 Kecamatan Lengkap) ---
+  { name: "Anyar", kab: "Kabupaten Serang" },
+  { name: "Bandung", kab: "Kabupaten Serang" },
+  { name: "Baros", kab: "Kabupaten Serang" },
+  { name: "Binuang", kab: "Kabupaten Serang" },
+  { name: "Bojonegara", kab: "Kabupaten Serang" },
+  { name: "Carenang", kab: "Kabupaten Serang" },
+  { name: "Cikande", kab: "Kabupaten Serang" },
+  { name: "Cikeusal", kab: "Kabupaten Serang" },
+  { name: "Cinangka", kab: "Kabupaten Serang" },
+  { name: "Ciomas", kab: "Kabupaten Serang" },
+  { name: "Ciruas", kab: "Kabupaten Serang" },
+  { name: "Gunungsari", kab: "Kabupaten Serang" },
+  { name: "Jawilan", kab: "Kabupaten Serang" },
+  { name: "Kibin", kab: "Kabupaten Serang" },
+  { name: "Kopo", kab: "Kabupaten Serang" },
+  { name: "Kragilan", kab: "Kabupaten Serang" },
+  { name: "Kramatwatu", kab: "Kabupaten Serang" },
+  { name: "Lebak Wangi", kab: "Kabupaten Serang" },
+  { name: "Mancak", kab: "Kabupaten Serang" },
+  { name: "Pabuaran", kab: "Kabupaten Serang" },
+  { name: "Padarincang", kab: "Kabupaten Serang" },
+  { name: "Pamarayan", kab: "Kabupaten Serang" },
+  { name: "Petir", kab: "Kabupaten Serang" },
+  { name: "Pontang", kab: "Kabupaten Serang" },
+  { name: "Pulo Ampel", kab: "Kabupaten Serang" },
+  { name: "Tanara", kab: "Kabupaten Serang" },
+  { name: "Tirtayasa", kab: "Kabupaten Serang" },
+  { name: "Tunjung Teja", kab: "Kabupaten Serang" },
+  { name: "Waringinkurung", kab: "Kabupaten Serang" }
 ];
