@@ -369,7 +369,7 @@ export default function Navbar() {
                       {RENOV_SERVICES.map((s) => (
                         <Link
                           key={s.id}
-                          href="/renov-rumah"
+                          href={s.id === 'renov-interior' ? '/renov-rumah/interior-minimalis' : '/renov-rumah'}
                           onClick={() => setRenovDropdownOpen(false)}
                           className="flex items-start gap-3 p-3 rounded-2xl border border-slate-100 hover:border-cyan-300 hover:bg-cyan-50/40 transition-all group cursor-pointer"
                         >
